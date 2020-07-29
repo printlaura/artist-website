@@ -1,0 +1,584 @@
+$nav-colors: (a:#ffbe0b,b:#fb5607,c:#ff006e,d:#8338ec,e:#111c91);
+$regular-font:'Nunito', sans-serif;
+$special-font:'Barriecito', cursive;
+$regular-font-size:3rem;
+$font-color:white;
+
+
+* {margin:0; padding:0; box-sizing:border-box;}
+
+html {font-size:62,5%;}
+
+body {background-color: black; height:100%}
+
+.containerIndex {
+    display:grid;
+    grid-template-columns: 45% 55%;
+    grid-template-areas:"menu main";
+
+    .tituloIndex {
+        grid-area:main;
+        align-self:center;
+        color:$font-color;
+        font-size:12rem;
+        font-family:$special-font;
+    }
+
+    nav {
+        grid-area:menu;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        font-family:$regular-font;
+        font-size:7rem;
+        padding:10px;
+
+        a {text-decoration:none;}
+
+        a:hover {
+            text-decoration:line-through; 
+            transform:translateX(3px);
+        }
+
+        @each $nav,$color in $nav-colors {
+
+            .#{$nav} {
+                color:$color;
+            }
+        }
+
+    }
+
+}
+
+.containerMusic {
+    background:linear-gradient(blacK,#0d0118,#0d0118,#160229,black);
+
+    .lastReleaseTitle { 
+        text-align: center;
+        padding-top: 30px;
+
+        p {
+            color:$font-color;
+            font-family:$special-font;
+            font-size: 5rem;
+            animation-name:showTitle;
+            animation-duration:5s;
+
+            a {color:#52158b}
+
+            span {color:#a787c5}
+        }
+    }
+
+    .lastReleaseAlbum {
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content: center;
+        padding-top:40px;
+        margin-bottom:150px;
+
+        img {
+            height:450px;
+            width:450px;
+            filter: drop-shadow(2px 2px 4px rgb(66, 1, 66));
+        }
+    }
+        
+}
+
+@keyframes showTitle {from {opacity:0;} to {opacity:1};}
+
+.video {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+
+    iframe {
+        height:600px;
+        width:1100px;
+        border:none;
+        padding:50px;
+    }
+
+}
+
+.container #carouselExampleCaptions {
+    width:600px;
+    margin-right:auto;
+    margin-bottom:100px;
+    margin-left:auto;
+
+    .carousel-inner .carousel-caption a span {
+        color: #460088;
+        font-size:2rem;
+        font-family:$special-font;
+        padding:5px;
+    }
+}
+
+
+.contact {
+    color:$font-color;
+    margin-top:80px;
+    margin-left:350px;
+    width:400px;
+
+    .form-group input {
+        background-color:lightgray;
+    }
+
+    .form-group textarea {
+        background-color:lightgray;
+        margin-top:30px;
+        height:150px;
+    }
+
+    #exampleFormControlSelect1 {
+        background-color:lightgray;
+    }
+
+    .form-check {
+        margin-bottom:20px;
+   
+        .form-check-label {
+            padding-right:25px;
+        }
+    }
+}
+
+.contact select:focus {font-size:1rem;}
+
+.press {
+    margin-right:1rem;
+    padding-left:9rem;
+
+    p {
+        font-family:$regular-font;
+        text-transform: uppercase;
+        color:$font-color;
+        font-size:2rem;
+        letter-spacing:5px;
+        text-align:right;
+    }
+
+    .press__critica {
+        text-transform:uppercase;
+        color:#585858;
+        padding-top:20px;
+        padding-left:100px;
+        text-align:left;
+    }  
+    
+}
+
+.tour {
+    margin-top:4rem;
+    margin-right:1rem;
+    padding-left: 5rem;
+
+    p {
+        font-family:$regular-font;
+        text-transform:uppercase;
+        color:$font-color;
+        font-size:$regular-font-size;
+        letter-spacing:10px;
+        text-align:right;
+
+        b {
+            color:#585858;
+            font-family:$regular-font;
+        }
+
+        .tour__soldOut {
+            display:none;
+        }
+        
+        .tour__tickets {
+            display:none;
+        }
+    }
+}
+
+p:hover .tour__soldOut {
+    display:inline-block;
+    color:rgb(66, 1, 66);
+}
+
+p:hover .tour__tickets {
+    display:inline-block;
+    color:rgb(54, 63, 187);
+}
+
+header {
+    margin-bottom:1rem;
+    padding-top:5px;
+
+    nav {
+        display:flex;
+        justify-content:space-between;
+        flex-direction:row;
+
+        .menu__header { 
+            font-size:2.5rem;
+            padding-left:10px;
+            height:3rem;
+
+            li {
+                
+                a {
+                    text-decoration:none; 
+                    color:#52158b;
+                }   
+                
+                a:hover {font-size:3rem;}
+                
+                .b__tour {color:#a787c5}
+                .c__music {color:#a787c5}
+                .d__press {color:#a787c5}
+                .e__contact {color:#a787c5}
+            }
+        }
+
+        .links__header {
+            padding-right:20px;
+            display:flex;
+            justify-content:space-between;
+            flex-direction:row;
+
+            li {
+                
+                a{
+
+                    img {
+                        height:60px;
+                        width:60px;
+                        padding:10px;
+                    }
+                }
+            }    
+        }
+    }
+}
+
+footer {
+    margin-top:8rem;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    background-color:black;
+
+    .footer {
+        display:flex;
+        justify-content:space-between;
+        flex-direction:row;
+        padding-top: 0.5rem;
+
+        .container {
+            margin-left:0.5rem;
+            padding-left:0.5rem;
+            
+            form .input-group {
+                font-family:$regular-font;
+                width:500px;
+
+                input {background-color: rgb(160, 160, 160);}
+            }
+        }
+
+        .links__footer {
+            padding-right:20px;
+            display:flex;
+            justify-content:space-between;
+            flex-direction:row;
+
+            li {
+                
+                a{
+
+                    img {
+                        height:60px;
+                        width:60px;
+                        padding:10px;
+                    }
+                }
+            }    
+        }
+    }
+
+}
+
+// ----------------- VERSION MOBILE ------------------------------
+
+@media only screen and (max-width:768px) {
+
+    .containerIndex {
+        display:grid;
+        grid-template-rows:55% 45%;
+        grid-template-areas: "menu" "main";
+        align-items:space-between;
+    
+        .tituloIndex {
+            grid-area:main;
+            color:$font-color;
+            font-size: 5rem;
+            padding-top:60px;
+            padding-left:50px;
+            font-family:$special-font;
+        }
+    
+        nav {
+            grid-area:menu;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            font-family:$regular-font;
+            font-size:3rem;
+            padding:10px;
+    
+            a {text-decoration:none;}
+    
+            a:hover {text-decoration:line-through;}
+    
+            @each $nav,$color in $nav-colors {
+
+                .#{$nav} {
+                    color:$color;
+                }
+            }
+    
+        }
+    
+    }
+    
+    .containerMusic {
+        background:linear-gradient(blacK,#06000c,#0c0116,#0c0116,black,black);
+    
+    
+        .lastReleaseTitle { 
+            padding-top: 15px;
+            padding-right: 3rem;
+            padding-left:4rem;
+    
+            p {
+                color:$font-color;
+                font-family:$special-font;
+                font-size:3rem;
+                animation-name:showTitle;
+                animation-duration:5s;
+            
+                a {color:#52158b}
+
+                span {color:#a787c5}
+                
+            }    
+        
+        }
+    
+        .lastReleaseAlbum {
+            display:flex;
+            flex-flow:row wrap;
+            justify-content: center;
+            padding-top:20px;
+            margin-bottom:100px;
+
+            img {
+                height:200px;
+                width:200px;
+                filter:drop-shadow(1px 1px 2px rgb(66, 1, 66));
+            }
+
+        }
+
+        .container #carouselExampleCaptions {
+        width:200px;
+        margin-right:auto;
+        margin-bottom:50px;
+        margin-left:auto;
+    
+            .carousel-inner .carousel-caption a span {
+                color: #460088;
+                font-size:1rem;
+                font-family:$special-font;
+                padding:5px;
+            }
+
+        }
+
+        .video iframe {
+            height:200px;
+            width:300px;
+            border:none;
+            padding:25px;
+        }
+
+    }
+
+    .contact {
+        color:$font-color;
+        padding-top:130px;
+        margin-left:20px;
+        width:150px;
+        font-size:0.75rem;
+
+        .form-group textarea {
+            background-color:lightgray;
+            margin-top:15px;
+            height:70px;
+            font-size:0.75rem;
+        }
+
+        .form-group input {
+            background-color:lightgray;
+            height:15px;  
+            font-size:0.75rem;  
+        }
+
+        #exampleFormControlSelect1 {
+            background-color:lightgray;
+            height:15px;
+        }
+
+        select:focus {font-size:1rem;}
+    
+        .form-check {margin-bottom:10px;}
+
+        .form-group button {
+            font-size:10px;
+            height:28px;
+            width:50px;
+        }
+    }
+
+    .press p {
+        font-family:$regular-font;
+        color:$font-color;
+        font-size:$regular-font-size/4;
+        letter-spacing:2px;
+        text-align:right;
+        text-transform:uppercase;
+        padding-right:5px;
+    }
+    
+    .press .critica {
+        text-transform:uppercase;
+        color:#585858;
+        padding-top:10px;
+        text-align:left;
+    }
+    
+    .tour {
+        margin-top:2rem;
+        margin-right:0.5rem;
+        
+        p {
+            font-family:'Nunito', sans-serif;
+            text-transform:uppercase;
+            color:$font-color;
+            font-size:$regular-font-size/3;
+            letter-spacing:5px;
+            text-align:right;
+
+            b {color:#585858; font-family:'Nunito', sans-serif;}
+
+        }
+    
+        .tour__soldOut {display:none;}
+        .tour__tickets {display:none;}
+    
+    }
+    
+    .tour p:hover .tour__soldOut {
+        display:inline-block;
+        color:rgb(66, 1, 66);
+    }
+    
+    .tour p:hover .tour__tickets {
+        display:inline-block;
+        color:rgb(54, 63, 187);
+    }
+    
+    header {
+        margin-bottom:1rem;
+        padding-top:5px;
+
+        nav {
+            display:flex;
+            justify-content:space-between;
+            flex-direction:row;
+    
+            .menu__header { 
+                font-size:1rem;
+                margin-bottom:0.5rem;
+                height:1.5rem;
+        
+                li {  
+
+                    a {
+                        text-decoration:none; 
+                        color:#52158b;
+                    } 
+                    
+                    .b__tour {color:#a787c5}
+                    .c__music {color:#a787c5}
+                    .d__press {color:#a787c5}
+                    .e__contact {color:#a787c5}
+                }
+            }
+        
+            .links__header {
+                padding-right:5px;
+                display:flex;
+                justify-content:space-between;
+                flex-direction:row;
+                
+                li a img {
+                    height:20px;
+                    width:20px;
+                    padding:5px;
+                }
+            }
+        }
+    }
+
+    footer {
+        margin-top:5rem;
+        padding-top:0.5rem;
+        padding-bottom:0.5rem;
+        border-top:thin;
+        background-color:black;
+
+        .footer {
+            display:flex;
+            justify-content:space-between;
+            flex-direction:row;
+            padding-top: 0.5rem;
+
+            .container {
+                margin-left:0;
+                padding-left:0.5rem;
+                
+                form .input-group {
+                    font-family:$regular-font;
+                    width:200px;
+
+                    input {background-color: rgb(160, 160, 160);font-size:0.5rem;}
+
+                    button {font-size:0.5rem;}
+                }
+            }
+
+            .links__footer {
+                padding-right:10px;
+                display:flex;
+                justify-content:space-between;
+                flex-direction:row;
+
+                li a img {
+                    height:30px;
+                    width:30px;
+                    padding:5px;
+                } 
+            }
+        }
+    }
+}
