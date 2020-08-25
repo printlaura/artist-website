@@ -18,8 +18,9 @@ body {
     grid-area: main;
     align-self: center;
     color: white;
-    font-size: 12rem;
-    font-family: "Barriecito", cursive; }
+    font-size: 19rem;
+    font-family: "Barriecito", cursive;
+    padding-right: 30px; }
   .containerIndex nav {
     grid-area: menu;
     display: flex;
@@ -44,96 +45,80 @@ body {
     .containerIndex nav .e {
       color: #111c91; }
 
-.containerMusic {
-  background: linear-gradient(blacK, #0d0118, #0d0118, #160229, black); }
-  .containerMusic .lastReleaseTitle {
-    text-align: center;
-    padding-top: 30px; }
-    .containerMusic .lastReleaseTitle p {
-      color: white;
-      font-family: "Barriecito", cursive;
+@media only screen and (max-width: 768px) {
+  .containerIndex .tituloIndex {
+    font-size: 10rem;
+    padding-right: 20px; }
+  .containerIndex nav {
+    font-size: 6rem; } }
+
+@media only screen and (max-width: 425px) {
+  .containerIndex {
+    display: grid;
+    grid-template-rows: 55% 45%;
+    grid-template-areas: "menu" "main";
+    align-items: space-between; }
+    .containerIndex .tituloIndex {
+      grid-area: main;
+      align-self: center;
+      font-size: 7rem;
+      padding-top: 60px;
+      padding-left: 50px;
+      padding-right: 10px; }
+    .containerIndex nav {
+      font-size: 3rem; }
+      .containerIndex nav a:hover {
+        text-decoration: line-through; } }
+
+@media only screen and (max-width: 320px) {
+  .containerIndex {
+    display: grid;
+    grid-template-rows: 55% 45%;
+    grid-template-areas: "menu" "main";
+    align-items: space-between; }
+    .containerIndex .tituloIndex {
+      grid-area: main;
+      align-self: center;
       font-size: 5rem;
-      animation-name: showTitle;
-      animation-duration: 5s; }
-      .containerMusic .lastReleaseTitle p a {
-        color: #52158b; }
-      .containerMusic .lastReleaseTitle p span {
-        color: #a787c5; }
-  .containerMusic .lastReleaseAlbum {
+      padding-top: 60px;
+      padding-left: 50px;
+      padding-right: 30px; }
+    .containerIndex nav {
+      font-size: 4rem; }
+      .containerIndex nav a:hover {
+        text-decoration: line-through; } }
+
+.menu__header-tour {
+  height: 3rem;
+  padding-right: 10px;
+  float: right; }
+  .menu__header-tour ul {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    padding-top: 40px;
-    margin-bottom: 150px; }
-    .containerMusic .lastReleaseAlbum img {
-      height: 450px;
-      width: 450px;
-      filter: drop-shadow(2px 2px 4px #420142); }
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none; }
+    .menu__header-tour ul li a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: #52158b;
+      padding: 8px; }
+    .menu__header-tour ul li a:hover {
+      font-size: 2rem; }
+    .menu__header-tour ul li .b__tour {
+      color: #a787c5; }
+    .menu__header-tour ul li .c__music {
+      color: #a787c5; }
+    .menu__header-tour ul li .d__press {
+      color: #a787c5; }
+    .menu__header-tour ul li .e__contact {
+      color: #a787c5; }
 
-@keyframes showTitle {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
-.video {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-  .video iframe {
-    height: 600px;
-    width: 1100px;
-    border: none;
-    padding: 50px; }
-
-.container #carouselExampleCaptions {
-  width: 600px;
-  margin-right: auto;
-  margin-bottom: 100px;
-  margin-left: auto; }
-  .container #carouselExampleCaptions .carousel-inner .carousel-caption a span {
-    color: #460088;
-    font-size: 2rem;
-    font-family: "Barriecito", cursive;
-    padding: 5px; }
-
-.contact {
-  color: white;
-  margin-top: 80px;
-  margin-left: 350px;
-  width: 400px; }
-  .contact .form-group input {
-    background-color: lightgray; }
-  .contact .form-group textarea {
-    background-color: lightgray;
-    margin-top: 30px;
-    height: 150px; }
-  .contact #exampleFormControlSelect1 {
-    background-color: lightgray; }
-  .contact .form-check {
-    margin-bottom: 20px; }
-    .contact .form-check .form-check-label {
-      padding-right: 25px; }
-
-.contact select:focus {
-  font-size: 1rem; }
-
-.press {
-  margin-right: 1rem;
-  padding-left: 9rem; }
-  .press p {
-    font-family: "Nunito", sans-serif;
-    text-transform: uppercase;
-    color: white;
-    font-size: 2rem;
-    letter-spacing: 5px;
-    text-align: right; }
-  .press .press__critica {
-    text-transform: uppercase;
-    color: #585858;
-    padding-top: 20px;
-    padding-left: 100px;
-    text-align: left; }
+.bg-image {
+  position: relative;
+  text-align: center; }
+  .bg-image img {
+    width: 100%;
+    height: auto; }
 
 .tour {
   margin-top: 4rem;
@@ -143,7 +128,7 @@ body {
     font-family: "Nunito", sans-serif;
     text-transform: uppercase;
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: 10px;
     text-align: right; }
     .tour p b {
@@ -161,6 +146,256 @@ p:hover .tour__soldOut {
 p:hover .tour__tickets {
   display: inline-block;
   color: #363fbb; }
+
+@media only screen and (max-width: 768px) {
+  .menu__header-tour {
+    height: 3rem;
+    padding-right: 5px;
+    float: right; }
+    .menu__header-tour ul li a {
+      padding: 3px;
+      font-size: 1.5rem; }
+    .menu__header-tour ul li a:hover {
+      font-size: 2rem; }
+  .tour {
+    margin-top: 2rem;
+    margin-right: 0.5rem; }
+    .tour p {
+      font-size: 1rem;
+      letter-spacing: 5px;
+      text-align: right; } }
+
+@media only screen and (max-width: 320px) {
+  .menu__header-tour {
+    height: 3rem;
+    float: right; }
+    .menu__header-tour ul li a {
+      font-size: 1.25rem; }
+  .bg-image img {
+    width: 100%;
+    height: auto; } }
+
+.containerMusic .lastReleaseTitle {
+  text-align: center;
+  padding-top: 30px; }
+  .containerMusic .lastReleaseTitle p {
+    color: white;
+    font-family: "Barriecito", cursive;
+    font-size: 5rem;
+    animation-name: showTitle;
+    animation-duration: 5s; }
+    .containerMusic .lastReleaseTitle p a {
+      color: #52158b; }
+    .containerMusic .lastReleaseTitle p span {
+      color: #a787c5; }
+
+.containerMusic .lastReleaseAlbum {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding-top: 40px;
+  margin-bottom: 8rem; }
+  .containerMusic .lastReleaseAlbum img {
+    height: 450px;
+    width: 450px;
+    padding: 10px; }
+
+@keyframes showTitle {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.containerMusic .container-fluid #recipeCarousel {
+  margin-bottom: 10rem; }
+  .containerMusic .container-fluid #recipeCarousel .carousel-inner .carousel-item .col-lg-5 iframe {
+    padding-top: 2rem;
+    width: 300px;
+    height: 380px; }
+
+.containerMusic .container-fluid #galeria-responsive {
+  display: none; }
+
+.containerMusic .container-fluid #galeria {
+  display: flex;
+  flex-flow: row wrap; }
+  .containerMusic .container-fluid #galeria .col-xl-4 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; }
+    .containerMusic .container-fluid #galeria .col-xl-4 img {
+      width: 100%;
+      padding: 10px; }
+
+@media only screen and (max-width: 768px) {
+  .containerMusic .lastReleaseTitle {
+    padding-top: 15px; }
+    .containerMusic .lastReleaseTitle p {
+      font-size: 3rem; }
+  .containerMusic .lastReleaseAlbum {
+    padding-top: 20px;
+    padding-left: 60px;
+    margin-bottom: 100px; }
+    .containerMusic .lastReleaseAlbum img {
+      height: 300px;
+      width: 300px; }
+  .containerMusic .container-fluid #recipeCarousel {
+    margin-bottom: 6rem;
+    margin-left: 50px; }
+    .containerMusic .container-fluid #recipeCarousel .carousel-inner .carousel-item .col-lg-5 iframe {
+      padding-top: 1rem;
+      width: 250px;
+      height: 300px; } }
+
+@media only screen and (max-width: 425px) {
+  .containerMusic .lastReleaseTitle {
+    padding-top: 30px;
+    padding-right: 20px; }
+    .containerMusic .lastReleaseTitle p {
+      font-size: 4rem;
+      animation-name: showTitle;
+      animation-duration: 5s; }
+  .containerMusic .lastReleaseAlbum {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-top: 20px;
+    margin-bottom: 4rem; }
+    .containerMusic .lastReleaseAlbum img {
+      height: 350px;
+      width: 350px;
+      padding: 10px; }
+  .containerMusic .container-fluid #recipeCarousel {
+    margin-bottom: 6rem;
+    width: 100%; }
+    .containerMusic .container-fluid #recipeCarousel .carousel-inner .carousel-item {
+      padding-left: 25px; } }
+
+@media only screen and (max-width: 320px) {
+  .containerMusic .lastReleaseTitle p {
+    font-size: 3rem;
+    animation-name: showTitle;
+    animation-duration: 5s; }
+  .containerMusic .lastReleaseAlbum img {
+    height: 300px;
+    width: 300px;
+    padding: 10px; }
+  .containerMusic .container-fluid #recipeCarousel .carousel-inner .carousel-item {
+    padding-left: 20px; }
+    .containerMusic .container-fluid #recipeCarousel .carousel-inner .carousel-item .col-lg-5 iframe {
+      width: 200px;
+      height: 250px; } }
+
+.press {
+  margin-right: 1rem;
+  padding-left: 12rem; }
+  .press p {
+    font-family: "Nunito", sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    text-align: right; }
+  .press .press__critica {
+    text-transform: uppercase;
+    color: #585858;
+    padding-top: 20px;
+    padding-left: 100px;
+    text-align: left; }
+
+@media only screen and (max-width: 768px) {
+  .press {
+    margin-top: 2rem;
+    margin-right: 0.5rem;
+    padding-left: 5rem; }
+    .press p {
+      font-size: 1rem;
+      text-align: right; }
+    .press .press__critica {
+      padding-top: 10px; } }
+
+@media only screen and (max-width: 375px) {
+  .press {
+    padding-left: 3rem; }
+    .press .press__critica {
+      padding-top: 10px;
+      padding-left: 3rem;
+      text-align: left; } }
+
+.contact-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  .contact-page .contact-pic {
+    padding-right: 40px;
+    padding-bottom: 40px; }
+  .contact-page .contact-form {
+    color: #52158b;
+    margin-top: 170px;
+    margin-left: 250px;
+    width: 400px; }
+    .contact-page .contact-form .form-group .form-control {
+      color: #242323; }
+    .contact-page .contact-form .form-group input {
+      background-color: #6d6c6c; }
+    .contact-page .contact-form .form-group textarea {
+      background-color: #6d6c6c;
+      margin-top: 30px;
+      height: 150px; }
+    .contact-page .contact-form .form-group #exampleFormControlInput1 {
+      color: #242323; }
+    .contact-page .contact-form .form-group #exampleFormControlSelect1 {
+      background-color: #6d6c6c;
+      color: #242323; }
+      .contact-page .contact-form .form-group #exampleFormControlSelect1 option:focus {
+        font-size: 1rem; }
+    .contact-page .contact-form .form-check {
+      margin-bottom: 20px; }
+      .contact-page .contact-form .form-check .form-check-label {
+        padding-right: 25px; }
+
+@media only screen and (max-width: 1024px) {
+  .contact-page .contact-pic {
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-bottom: 40px; }
+    .contact-page .contact-pic img {
+      width: 440px;
+      height: 550px; }
+  .contact-page .container .contact-form {
+    margin-top: 140px;
+    margin-left: 250px;
+    width: 300px; } }
+
+@media only screen and (max-width: 768px) {
+  .contact-page .contact-pic {
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-bottom: 40px; }
+    .contact-page .contact-pic img {
+      width: 420px;
+      height: 510px; }
+  .contact-page .container .contact-form {
+    margin-top: 100px;
+    margin-left: 20px;
+    width: 250px; } }
+
+@media only screen and (max-width: 425px) {
+  .contact-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    .contact-page .contact-pic {
+      padding-top: 50px;
+      padding-right: 20px;
+      padding-bottom: 40px; }
+      .contact-page .contact-pic img {
+        width: 440px;
+        height: 550px; }
+    .contact-page .container .contact-form {
+      margin-top: 70px;
+      margin-left: 30px;
+      width: 300px; } }
 
 header {
   margin-bottom: 1rem;
@@ -186,21 +421,30 @@ header {
         color: #a787c5; }
       header nav .menu__header li .e__contact {
         color: #a787c5; }
-    header nav .links__header {
-      padding-right: 20px;
+
+@media only screen and (max-width: 768px) {
+  header nav {
+    font-size: 2rem;
+    height: 2.5rem;
+    padding-right: 10px; }
+    header nav .menu__header {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      flex-direction: row; }
-      header nav .links__header li a img {
-        height: 60px;
-        width: 60px;
-        padding: 10px; }
+      list-style-type: none; }
+      header nav .menu__header li {
+        padding: 5px; }
+        header nav .menu__header li a {
+          font-size: 1.5rem; } }
+
+@media only screen and (max-width: 320px) {
+  header nav .menu__header li a {
+    font-size: 1rem;
+    padding: 5px; } }
 
 footer {
   margin-top: 8rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: black; }
+  padding-bottom: 0.5rem; }
   footer .footer {
     display: flex;
     justify-content: space-between;
@@ -219,208 +463,11 @@ footer {
       display: flex;
       justify-content: space-between;
       flex-direction: row; }
-      footer .footer .links__footer li a img {
-        height: 60px;
-        width: 60px;
-        padding: 10px; }
-
-@media only screen and (max-width: 768px) {
-  .containerIndex {
-    display: grid;
-    grid-template-rows: 55% 45%;
-    grid-template-areas: "menu" "main";
-    align-items: space-between; }
-    .containerIndex .tituloIndex {
-      grid-area: main;
-      color: white;
-      font-size: 5rem;
-      padding-top: 60px;
-      padding-left: 50px;
-      font-family: "Barriecito", cursive; }
-    .containerIndex nav {
-      grid-area: menu;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-family: "Nunito", sans-serif;
-      font-size: 3rem;
-      padding: 10px; }
-      .containerIndex nav a {
-        text-decoration: none; }
-      .containerIndex nav a:hover {
-        text-decoration: line-through; }
-      .containerIndex nav .a {
-        color: #ffbe0b; }
-      .containerIndex nav .b {
-        color: #fb5607; }
-      .containerIndex nav .c {
-        color: #ff006e; }
-      .containerIndex nav .d {
-        color: #8338ec; }
-      .containerIndex nav .e {
-        color: #111c91; }
-  .containerMusic {
-    background: linear-gradient(blacK, #06000c, #0c0116, #0c0116, black, black); }
-    .containerMusic .lastReleaseTitle {
-      padding-top: 15px;
-      padding-right: 3rem;
-      padding-left: 4rem; }
-      .containerMusic .lastReleaseTitle p {
-        color: white;
-        font-family: "Barriecito", cursive;
-        font-size: 3rem;
-        animation-name: showTitle;
-        animation-duration: 5s; }
-        .containerMusic .lastReleaseTitle p a {
-          color: #52158b; }
-        .containerMusic .lastReleaseTitle p span {
-          color: #a787c5; }
-    .containerMusic .lastReleaseAlbum {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      padding-top: 20px;
-      margin-bottom: 100px; }
-      .containerMusic .lastReleaseAlbum img {
-        height: 200px;
-        width: 200px;
-        filter: drop-shadow(1px 1px 2px #420142); }
-    .containerMusic .container #carouselExampleCaptions {
-      width: 200px;
-      margin-right: auto;
-      margin-bottom: 50px;
-      margin-left: auto; }
-      .containerMusic .container #carouselExampleCaptions .carousel-inner .carousel-caption a span {
-        color: #460088;
-        font-size: 1rem;
-        font-family: "Barriecito", cursive;
-        padding: 5px; }
-    .containerMusic .video iframe {
-      height: 200px;
-      width: 300px;
-      border: none;
-      padding: 25px; }
-  .contact {
-    color: white;
-    padding-top: 130px;
-    margin-left: 20px;
-    width: 150px;
-    font-size: 0.75rem; }
-    .contact .form-group textarea {
-      background-color: lightgray;
-      margin-top: 15px;
-      height: 70px;
-      font-size: 0.75rem; }
-    .contact .form-group input {
-      background-color: lightgray;
-      height: 15px;
-      font-size: 0.75rem; }
-    .contact #exampleFormControlSelect1 {
-      background-color: lightgray;
-      height: 15px; }
-    .contact select:focus {
-      font-size: 1rem; }
-    .contact .form-check {
-      margin-bottom: 10px; }
-    .contact .form-group button {
-      font-size: 10px;
-      height: 28px;
-      width: 50px; }
-  .press p {
-    font-family: "Nunito", sans-serif;
-    color: white;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-align: right;
-    text-transform: uppercase;
-    padding-right: 5px; }
-  .press .critica {
-    text-transform: uppercase;
-    color: #585858;
-    padding-top: 10px;
-    text-align: left; }
-  .tour {
-    margin-top: 2rem;
-    margin-right: 0.5rem; }
-    .tour p {
-      font-family: 'Nunito', sans-serif;
-      text-transform: uppercase;
-      color: white;
-      font-size: 1rem;
-      letter-spacing: 5px;
-      text-align: right; }
-      .tour p b {
-        color: #585858;
-        font-family: 'Nunito', sans-serif; }
-    .tour .tour__soldOut {
-      display: none; }
-    .tour .tour__tickets {
-      display: none; }
-  .tour p:hover .tour__soldOut {
-    display: inline-block;
-    color: #420142; }
-  .tour p:hover .tour__tickets {
-    display: inline-block;
-    color: #363fbb; }
-  header {
-    margin-bottom: 1rem;
-    padding-top: 5px; }
-    header nav {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row; }
-      header nav .menu__header {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        height: 1.5rem; }
-        header nav .menu__header li a {
-          text-decoration: none;
-          color: #52158b; }
-        header nav .menu__header li .b__tour {
-          color: #a787c5; }
-        header nav .menu__header li .c__music {
-          color: #a787c5; }
-        header nav .menu__header li .d__press {
-          color: #a787c5; }
-        header nav .menu__header li .e__contact {
-          color: #a787c5; }
-      header nav .links__header {
-        padding-right: 5px;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row; }
-        header nav .links__header li a img {
-          height: 20px;
-          width: 20px;
-          padding: 5px; }
-  footer {
-    margin-top: 5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-top: thin;
-    background-color: black; }
-    footer .footer {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      padding-top: 0.5rem; }
-      footer .footer .container {
-        margin-left: 0;
-        padding-left: 0.5rem; }
-        footer .footer .container form .input-group {
-          font-family: "Nunito", sans-serif;
-          width: 200px; }
-          footer .footer .container form .input-group input {
-            background-color: #a0a0a0;
-            font-size: 0.5rem; }
-          footer .footer .container form .input-group button {
-            font-size: 0.5rem; }
-      footer .footer .links__footer {
-        padding-right: 10px;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row; }
-        footer .footer .links__footer li a img {
-          height: 30px;
-          width: 30px;
-          padding: 5px; } }
+      footer .footer .links__footer li {
+        list-style-type: none; }
+        footer .footer .links__footer li a {
+          text-decoration: none; }
+          footer .footer .links__footer li a img {
+            height: 60px;
+            width: 60px;
+            padding: 10px; }

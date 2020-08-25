@@ -4,12 +4,13 @@ $special-font:'Barriecito', cursive;
 $regular-font-size:3rem;
 $font-color:white;
 
-
-* {margin:0; padding:0; box-sizing:border-box;}
+* {margin:0;padding:0;box-sizing:border-box;}
 
 html {font-size:62,5%;}
 
-body {background-color: black; height:100%}
+body {background-color:black;height:100%}
+
+// ------------------- index -------------------------- 
 
 .containerIndex {
     display:grid;
@@ -17,15 +18,16 @@ body {background-color: black; height:100%}
     grid-template-areas:"menu main";
 
     .tituloIndex {
-        grid-area:main;
+        grid-area: main;
         align-self:center;
         color:$font-color;
-        font-size:12rem;
+        font-size:19rem;
         font-family:$special-font;
+        padding-right:30px;
     }
 
     nav {
-        grid-area:menu;
+        grid-area: menu;
         display:flex;
         flex-direction:column;
         justify-content:space-between;
@@ -46,13 +48,182 @@ body {background-color: black; height:100%}
                 color:$color;
             }
         }
-
     }
-
 }
 
+@media only screen and (max-width:768px) {
+    .containerIndex {
+
+        .tituloIndex {
+            font-size:10rem;
+            padding-right:20px;
+        }
+
+        nav {
+            font-size:6rem;
+        }
+    }
+}
+
+@media only screen and (max-width:425px) {
+
+    .containerIndex {
+        display:grid;
+        grid-template-rows:55% 45%;
+        grid-template-areas: "menu" "main";
+        align-items:space-between;
+    
+        .tituloIndex {
+            grid-area:main;
+            align-self:center;
+            font-size:7rem;
+            padding-top:60px;
+            padding-left:50px;
+            padding-right:10px;
+        }
+    
+        nav {
+            font-size:3rem;
+    
+            a:hover {text-decoration:line-through;}
+        }
+    }
+}
+
+@media only screen and (max-width:320px) {
+
+    .containerIndex {
+        display:grid;
+        grid-template-rows:55% 45%;
+        grid-template-areas: "menu" "main";
+        align-items:space-between;
+    
+        .tituloIndex {
+            grid-area:main;
+            align-self: center;
+            font-size: 5rem;
+            padding-top:60px;
+            padding-left:50px;
+            padding-right:30px;
+        }
+    
+        nav {
+            font-size:4rem;
+    
+            a:hover {text-decoration:line-through;}
+        }
+    }
+}
+
+// --------------------- tour -------------------------
+.menu__header-tour { 
+    height:3rem;
+    padding-right:10px;
+    float:right;
+        
+   ul {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        list-style-type: none;
+
+        li {
+
+            a {
+                font-size:2rem;
+                text-decoration:none;
+                color:#52158b;
+                padding:8px;
+            }   
+                
+            a:hover {font-size:2rem;}
+                
+            .b__tour {color:#a787c5}
+            .c__music {color:#a787c5}
+            .d__press {color:#a787c5}
+            .e__contact {color:#a787c5}
+        }
+    }
+}
+
+.bg-image {
+    position: relative;
+    text-align: center;
+
+    img {width: 100%;height: auto;}
+}
+
+.tour {
+    margin-top:4rem;
+    margin-right:1rem;
+    padding-left:5rem;
+
+    p {
+        font-family:$regular-font;
+        text-transform:uppercase;
+        color:$font-color;
+        font-size:2rem;
+        letter-spacing:10px;
+        text-align:right;
+
+        b {
+            color:#585858;
+            font-family:$regular-font;
+        }
+
+        .tour__soldOut {display:none;}   
+        .tour__tickets {display:none;}
+    }
+}
+
+p:hover .tour__soldOut {
+    display:inline-block;
+    color:rgb(66, 1, 66);
+}
+
+p:hover .tour__tickets {
+    display:inline-block;
+    color:rgb(54, 63, 187);
+}
+
+@media only screen and (max-width:768px) {
+    .menu__header-tour { 
+        height:3rem;
+        padding-right:5px;
+        float:right;
+            
+        ul li {
+            
+            a {padding:3px;font-size:1.5rem;}   
+            a:hover {font-size:2rem;}
+        }
+    }
+
+    .tour {
+        margin-top:2rem;
+        margin-right:0.5rem;
+        
+        p {
+            font-size:$regular-font-size/3;
+            letter-spacing:5px;
+            text-align:right;
+        }
+    }
+}
+ 
+@media only screen and (max-width:320px) {
+    .menu__header-tour { 
+        height:3rem;
+        float:right;
+            
+        ul li a {font-size:1.25rem;}  
+    }
+
+    .bg-image img {width: 100%;height: auto;}
+}
+// --------------------- music --------------------------
+
 .containerMusic {
-    background:linear-gradient(blacK,#0d0118,#0d0118,#160229,black);
 
     .lastReleaseTitle { 
         text-align: center;
@@ -74,84 +245,164 @@ body {background-color: black; height:100%}
     .lastReleaseAlbum {
         display:flex;
         flex-flow:row nowrap;
-        justify-content: center;
+        justify-content:center;
         padding-top:40px;
-        margin-bottom:150px;
+        margin-bottom:8rem;
 
         img {
             height:450px;
             width:450px;
-            filter: drop-shadow(2px 2px 4px rgb(66, 1, 66));
+            padding:10px;
         }
     }
+
+    @keyframes showTitle {from {opacity:0;} to {opacity:1};}
+
+    .container-fluid {
+    
+        #recipeCarousel {
+            margin-bottom:10rem;
+
+            .carousel-inner .carousel-item .col-lg-5 iframe {
+                padding-top:2rem;
+                width:300px;
+                height:380px;
+            }
+        }
+
+        #galeria-responsive {display: none;}
+
+        #galeria {
+            display:flex;
+            flex-flow:row wrap;
+
+            .col-xl-4 {
+                display:flex;
+                flex-direction: column;
+                padding:10px;
+                
+                img {width:100%;padding:10px;}
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+
+    .containerMusic {
+
+        .lastReleaseTitle { 
+            padding-top: 15px;
+
+            p {font-size: 3rem;}
+        }
+
+        .lastReleaseAlbum {
+            padding-top:20px;
+            padding-left: 60px;
+            margin-bottom:100px;
+
+            img {height:300px;width:300px;}
+        }
+
+        .container-fluid {
+    
+            #recipeCarousel {
+                margin-bottom:6rem;
+                margin-left:50px;
+    
+                .carousel-inner .carousel-item .col-lg-5 iframe {
+                    padding-top:1rem;
+                    width:250px;
+                    height:300px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:425px) {
+
+    .containerMusic {
+
+        .lastReleaseTitle { 
+            padding-top: 30px;
+            padding-right:20px;
+
+            p {
+                font-size:4rem;
+                animation-name:showTitle;
+                animation-duration:5s;
+            }
+        }
+
+        .lastReleaseAlbum {
+            display:flex;
+            flex-flow:column;
+            justify-content:center;
+            padding-top:20px;
+            margin-bottom:4rem;
+    
+            img {
+                height:350px;
+                width:350px;
+                padding:10px;
+            }
+        }
+
+        .container-fluid {
+    
+            #recipeCarousel {
+                margin-bottom:6rem;
+                width:100%;
+    
+                .carousel-inner .carousel-item {padding-left:25px;}
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .containerMusic {
         
-}
+        .lastReleaseTitle { 
 
-@keyframes showTitle {from {opacity:0;} to {opacity:1};}
+            p {
+                font-size:3rem;
+                animation-name:showTitle;
+                animation-duration:5s;
+            }
+        }
 
-.video {
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
+        .lastReleaseAlbum {
 
-    iframe {
-        height:600px;
-        width:1100px;
-        border:none;
-        padding:50px;
-    }
+            img {
+                height:300px;
+                width:300px;
+                padding:10px;
+            }
+        }
 
-}
+        .container-fluid #recipeCarousel {
 
-.container #carouselExampleCaptions {
-    width:600px;
-    margin-right:auto;
-    margin-bottom:100px;
-    margin-left:auto;
+            .carousel-inner .carousel-item {
+                padding-left:20px;
 
-    .carousel-inner .carousel-caption a span {
-        color: #460088;
-        font-size:2rem;
-        font-family:$special-font;
-        padding:5px;
-    }
-}
-
-
-.contact {
-    color:$font-color;
-    margin-top:80px;
-    margin-left:350px;
-    width:400px;
-
-    .form-group input {
-        background-color:lightgray;
-    }
-
-    .form-group textarea {
-        background-color:lightgray;
-        margin-top:30px;
-        height:150px;
-    }
-
-    #exampleFormControlSelect1 {
-        background-color:lightgray;
-    }
-
-    .form-check {
-        margin-bottom:20px;
-   
-        .form-check-label {
-            padding-right:25px;
+                .col-lg-5 iframe {
+                    width:200px;
+                    height:250px;
+                }
+            }
         }
     }
 }
 
-.contact select:focus {font-size:1rem;}
+// --------------------- press ----------------------------
 
 .press {
     margin-right:1rem;
-    padding-left:9rem;
+    padding-left:12rem;
 
     p {
         font-family:$regular-font;
@@ -169,46 +420,143 @@ body {background-color: black; height:100%}
         padding-left:100px;
         text-align:left;
     }  
-    
 }
 
-.tour {
-    margin-top:4rem;
-    margin-right:1rem;
-    padding-left: 5rem;
+@media only screen and (max-width:768px) { 
+    .press {
+        margin-top:2rem;
+        margin-right:0.5rem;
+        padding-left:5rem;
 
-    p {
-        font-family:$regular-font;
-        text-transform:uppercase;
-        color:$font-color;
-        font-size:$regular-font-size;
-        letter-spacing:10px;
-        text-align:right;
+        p {font-size:$regular-font-size/3;text-align:right;}
+    
+        .press__critica {padding-top:10px;}
+    }
+} 
 
-        b {
-            color:#585858;
-            font-family:$regular-font;
-        }
+@media only screen and (max-width:375px) {
+    
+    .press {
 
-        .tour__soldOut {
-            display:none;
-        }
-        
-        .tour__tickets {
-            display:none;
+        padding-left:3rem;
+
+        .press__critica {
+            padding-top:10px;
+            padding-left:3rem;
+            text-align:left;
         }
     }
 }
 
-p:hover .tour__soldOut {
-    display:inline-block;
-    color:rgb(66, 1, 66);
+// --------------------- contact ---------------------------
+.contact-page {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .contact-pic {
+        padding-right:40px;padding-bottom:40px;
+    }
+
+    .contact-form {
+        color:#52158b;
+        margin-top:170px;
+        margin-left:250px;
+        width:400px;
+
+        .form-group {
+            
+            .form-control {color:rgb(36, 35, 35);}
+
+            input {background-color:rgb(109, 108, 108);}
+
+            textarea {
+                background-color:rgb(109, 108, 108);
+                margin-top:30px;
+                height:150px;
+            }
+
+            #exampleFormControlInput1 {color:rgb(36, 35, 35);}
+
+            #exampleFormControlSelect1 {
+            background-color:rgb(109, 108, 108);
+            color:rgb(36, 35, 35);
+
+                option:focus  {font-size:1rem;}
+            }
+        }
+
+        .form-check {
+            margin-bottom:20px;
+    
+            .form-check-label {
+                padding-right:25px;
+            }
+        }
+    }
 }
 
-p:hover .tour__tickets {
-    display:inline-block;
-    color:rgb(54, 63, 187);
+@media only screen and (max-width:1024px) {  
+    .contact-page {
+
+        .contact-pic {
+            padding-top:50px;
+            padding-right:20px;
+            padding-bottom:40px;
+
+            img {width:440px;height:550px;}
+        }
+    
+        .container .contact-form {
+            margin-top:140px;
+            margin-left:250px;
+            width:300px;
+        }
+    }
 }
+
+@media only screen and (max-width:768px) {  
+    .contact-page {
+
+        .contact-pic {
+            padding-top:50px;
+            padding-right:20px;
+            padding-bottom:40px;
+
+            img {width:420px;height:510px;}
+        }
+    
+        .container .contact-form {
+            margin-top:100px;
+            margin-left:20px;
+            width:250px;
+        }
+    }
+}
+
+@media only screen and (max-width:425px) {  
+    .contact-page {
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+
+        .contact-pic {
+            padding-top:50px;
+            padding-right:20px;
+            padding-bottom:40px;
+
+            img {width:440px;height:550px;}
+        }
+    
+        .container .contact-form {
+            margin-top:70px;
+            margin-left:30px;
+            width:300px;
+        }
+    }
+}
+
+// ------------------- header & footer ---------------------
 
 header {
     margin-bottom:1rem;
@@ -226,10 +574,7 @@ header {
 
             li {
                 
-                a {
-                    text-decoration:none; 
-                    color:#52158b;
-                }   
+                a {text-decoration:none; color:#52158b;}
                 
                 a:hover {font-size:3rem;}
                 
@@ -239,33 +584,40 @@ header {
                 .e__contact {color:#a787c5}
             }
         }
+    }
+}
 
-        .links__header {
-            padding-right:20px;
-            display:flex;
-            justify-content:space-between;
-            flex-direction:row;
+@media only screen and (max-width:768px) {  
+    header {
 
-            li {
+        nav {
+            font-size:2rem;
+            height:2.5rem;
+            padding-right:10px;
                 
-                a{
+            .menu__header {
+                display:flex;
+                flex-direction:row;
+                justify-content:space-between;
+                list-style-type: none;
 
-                    img {
-                        height:60px;
-                        width:60px;
-                        padding:10px;
-                    }
+                li {
+                    padding:5px;
+                
+                    a {font-size:1.5rem;}
                 }
-            }    
+            }
         }
     }
 }
 
+@media only screen and (max-width:320px) {  
+    header nav .menu__header li a {font-size:1rem; padding:5px;}
+}
+
 footer {
     margin-top:8rem;
-    padding-top:0.5rem;
     padding-bottom:0.5rem;
-    background-color:black;
 
     .footer {
         display:flex;
@@ -292,8 +644,10 @@ footer {
             flex-direction:row;
 
             li {
-                
-                a{
+                list-style-type: none;
+            
+                a {
+                text-decoration:none;
 
                     img {
                         height:60px;
@@ -302,283 +656,6 @@ footer {
                     }
                 }
             }    
-        }
-    }
-
-}
-
-// ----------------- VERSION MOBILE ------------------------------
-
-@media only screen and (max-width:768px) {
-
-    .containerIndex {
-        display:grid;
-        grid-template-rows:55% 45%;
-        grid-template-areas: "menu" "main";
-        align-items:space-between;
-    
-        .tituloIndex {
-            grid-area:main;
-            color:$font-color;
-            font-size: 5rem;
-            padding-top:60px;
-            padding-left:50px;
-            font-family:$special-font;
-        }
-    
-        nav {
-            grid-area:menu;
-            display:flex;
-            flex-direction:column;
-            justify-content:space-between;
-            font-family:$regular-font;
-            font-size:3rem;
-            padding:10px;
-    
-            a {text-decoration:none;}
-    
-            a:hover {text-decoration:line-through;}
-    
-            @each $nav,$color in $nav-colors {
-
-                .#{$nav} {
-                    color:$color;
-                }
-            }
-    
-        }
-    
-    }
-    
-    .containerMusic {
-        background:linear-gradient(blacK,#06000c,#0c0116,#0c0116,black,black);
-    
-    
-        .lastReleaseTitle { 
-            padding-top: 15px;
-            padding-right: 3rem;
-            padding-left:4rem;
-    
-            p {
-                color:$font-color;
-                font-family:$special-font;
-                font-size:3rem;
-                animation-name:showTitle;
-                animation-duration:5s;
-            
-                a {color:#52158b}
-
-                span {color:#a787c5}
-                
-            }    
-        
-        }
-    
-        .lastReleaseAlbum {
-            display:flex;
-            flex-flow:row wrap;
-            justify-content: center;
-            padding-top:20px;
-            margin-bottom:100px;
-
-            img {
-                height:200px;
-                width:200px;
-                filter:drop-shadow(1px 1px 2px rgb(66, 1, 66));
-            }
-
-        }
-
-        .container #carouselExampleCaptions {
-        width:200px;
-        margin-right:auto;
-        margin-bottom:50px;
-        margin-left:auto;
-    
-            .carousel-inner .carousel-caption a span {
-                color: #460088;
-                font-size:1rem;
-                font-family:$special-font;
-                padding:5px;
-            }
-
-        }
-
-        .video iframe {
-            height:200px;
-            width:300px;
-            border:none;
-            padding:25px;
-        }
-
-    }
-
-    .contact {
-        color:$font-color;
-        padding-top:130px;
-        margin-left:20px;
-        width:150px;
-        font-size:0.75rem;
-
-        .form-group textarea {
-            background-color:lightgray;
-            margin-top:15px;
-            height:70px;
-            font-size:0.75rem;
-        }
-
-        .form-group input {
-            background-color:lightgray;
-            height:15px;  
-            font-size:0.75rem;  
-        }
-
-        #exampleFormControlSelect1 {
-            background-color:lightgray;
-            height:15px;
-        }
-
-        select:focus {font-size:1rem;}
-    
-        .form-check {margin-bottom:10px;}
-
-        .form-group button {
-            font-size:10px;
-            height:28px;
-            width:50px;
-        }
-    }
-
-    .press p {
-        font-family:$regular-font;
-        color:$font-color;
-        font-size:$regular-font-size/4;
-        letter-spacing:2px;
-        text-align:right;
-        text-transform:uppercase;
-        padding-right:5px;
-    }
-    
-    .press .critica {
-        text-transform:uppercase;
-        color:#585858;
-        padding-top:10px;
-        text-align:left;
-    }
-    
-    .tour {
-        margin-top:2rem;
-        margin-right:0.5rem;
-        
-        p {
-            font-family:'Nunito', sans-serif;
-            text-transform:uppercase;
-            color:$font-color;
-            font-size:$regular-font-size/3;
-            letter-spacing:5px;
-            text-align:right;
-
-            b {color:#585858; font-family:'Nunito', sans-serif;}
-
-        }
-    
-        .tour__soldOut {display:none;}
-        .tour__tickets {display:none;}
-    
-    }
-    
-    .tour p:hover .tour__soldOut {
-        display:inline-block;
-        color:rgb(66, 1, 66);
-    }
-    
-    .tour p:hover .tour__tickets {
-        display:inline-block;
-        color:rgb(54, 63, 187);
-    }
-    
-    header {
-        margin-bottom:1rem;
-        padding-top:5px;
-
-        nav {
-            display:flex;
-            justify-content:space-between;
-            flex-direction:row;
-    
-            .menu__header { 
-                font-size:1rem;
-                margin-bottom:0.5rem;
-                height:1.5rem;
-        
-                li {  
-
-                    a {
-                        text-decoration:none; 
-                        color:#52158b;
-                    } 
-                    
-                    .b__tour {color:#a787c5}
-                    .c__music {color:#a787c5}
-                    .d__press {color:#a787c5}
-                    .e__contact {color:#a787c5}
-                }
-            }
-        
-            .links__header {
-                padding-right:5px;
-                display:flex;
-                justify-content:space-between;
-                flex-direction:row;
-                
-                li a img {
-                    height:20px;
-                    width:20px;
-                    padding:5px;
-                }
-            }
-        }
-    }
-
-    footer {
-        margin-top:5rem;
-        padding-top:0.5rem;
-        padding-bottom:0.5rem;
-        border-top:thin;
-        background-color:black;
-
-        .footer {
-            display:flex;
-            justify-content:space-between;
-            flex-direction:row;
-            padding-top: 0.5rem;
-
-            .container {
-                margin-left:0;
-                padding-left:0.5rem;
-                
-                form .input-group {
-                    font-family:$regular-font;
-                    width:200px;
-
-                    input {background-color: rgb(160, 160, 160);font-size:0.5rem;}
-
-                    button {font-size:0.5rem;}
-                }
-            }
-
-            .links__footer {
-                padding-right:10px;
-                display:flex;
-                justify-content:space-between;
-                flex-direction:row;
-
-                li a img {
-                    height:30px;
-                    width:30px;
-                    padding:5px;
-                } 
-            }
         }
     }
 }
